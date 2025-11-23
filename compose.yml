@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17
+    container_name: mbti-postgres
+    environment:
+      POSTGRES_USER: mbti
+      POSTGRES_PASSWORD: mbti
+      POSTGRES_DB: mbti
+    ports:
+      - "5431:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+#     networks:
+#       - mbti-network
+
+# volumes:
+#   pgdata:
+
+# networks:
+#   engin-network:
+#     driver: bridge
