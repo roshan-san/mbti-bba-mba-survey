@@ -138,7 +138,7 @@ function RouteComponent() {
               onClick={downloadImage}
               className="flex-1 h-12 rounded-xl font-semibold"
             >
-              Downlooad my Card
+              Download My Card
             </Button>
           </div>
         </div>
