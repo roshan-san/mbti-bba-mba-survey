@@ -2,201 +2,215 @@ export interface PersonalityTypeInfo {
   type: string;
   name: string;
   description: string;
-  traits: string[]; 
+  traits: string[];
 }
 
 export const personalityTypes: { [key: string]: PersonalityTypeInfo } = {
   "ENTJ": {
     type: "ENTJ",
     name: "The Commander",
-    description: "ENTJs are strategic leaders, motivated to organize change. They excel at vision, management, and execution.",
+    description: "ENTJs are strategic leaders with strong commercial and organizational instincts.",
     traits: [
-      "Business Strategist",
-      "Operations Manager",
-      "Executive Leadership",
-      "Project Director",
-      "Business Development Manager"
+      "Business Operations Analyst",
+      "Financial Planning Associate",
+      "Procurement Coordinator",
+      "Commercial Analyst",
+      "Logistics & Supply Chain Analyst"
     ]
   },
+
   "ENTP": {
     type: "ENTP",
     name: "The Debater",
-    description: "ENTPs are innovative thinkers who enjoy ideation, problem-solving, and challenging norms.",
+    description: "ENTPs are idea-driven and excel in dynamic business environments.",
     traits: [
-      "Product Innovation Lead",
-      "Business Consultant",
-      "Entrepreneur",
-      "Marketing Strategist",
-      "R&D Manager"
+      "Market Research Analyst",
+      "Business Analyst",
+      "Financial Analyst (Entry-Level)",
+      "Sales Strategy Analyst",
+      "Operations Research Assistant"
     ]
   },
+
   "ENFJ": {
     type: "ENFJ",
     name: "The Protagonist",
-    description: "ENFJs are inspiring leaders who excel at team alignment, communication, and people-first leadership.",
+    description: "ENFJs are people-focused and excel in communication-heavy commercial roles.",
     traits: [
-      "HR Manager",
-      "Training & Development Lead",
-      "Customer Success Manager",
-      "Organizational Development Manager",
-      "Public Relations Manager"
+      "Client Relationship Executive",
+      "Corporate Communications Associate",
+      "Sales & HR Coordinator",
+      "Customer Relations Executive",
+      "Training & Onboarding Support"
     ]
   },
+
   "ENFP": {
     type: "ENFP",
     name: "The Campaigner",
-    description: "ENFPs bring energy, creativity, and people-focused ideas to organizations.",
+    description: "ENFPs thrive in creative, people-driven commerce roles.",
     traits: [
-      "Creative Marketing Lead",
-      "Brand Manager",
-      "Community Manager",
-      "Recruitment Specialist",
-      "Culture & Engagement Manager"
+      "Marketing Coordinator",
+      "Client Engagement Executive",
+      "Corporate Sales Associate",
+      "Brand Communication Assistant",
+      "CRM Executive"
     ]
   },
+
   "ESTJ": {
     type: "ESTJ",
     name: "The Executive",
-    description: "ESTJs are structured, dependable organizers who excel in operations and administration.",
+    description: "ESTJs excel in structured commercial, accounting, and compliance environments.",
     traits: [
-      "Operations Manager",
-      "Administrative Manager",
-      "Compliance Officer",
-      "Supply Chain Manager",
-      "Project Administrator"
+      "Accounts Supervisor (Junior)",
+      "Audit Assistant",
+      "Taxation Associate",
+      "Compliance & Documentation Associate",
+      "Commercial Operations Executive"
     ]
   },
+
   "ESTP": {
     type: "ESTP",
     name: "The Entrepreneur",
-    description: "ESTPs are action-oriented and thrive in fast-paced, dynamic environments.",
+    description: "ESTPs excel in field-driven, negotiation-heavy commercial roles.",
     traits: [
-      "Sales Manager",
-      "Business Development Lead",
-      "Field Operations Manager",
-      "Negotiator",
-      "Crisis Management Lead"
+      "Sales Analyst",
+      "Retail Operations Coordinator",
+      "Distribution & Trade Coordinator",
+      "Channel Sales Executive",
+      "Merchandise Planner"
     ]
   },
+
   "ESFJ": {
     type: "ESFJ",
     name: "The Consul",
-    description: "ESFJs organize people and processes, excelling in coordination, service, and administrative roles.",
+    description: "ESFJs thrive in supportive administrative and customer-centric commercial roles.",
     traits: [
-      "Customer Relations Manager",
-      "HR Coordinator",
-      "Office Manager",
-      "Client Services Lead",
-      "Event Manager"
+      "Administrative Accountant",
+      "Payroll Coordinator",
+      "Customer Account Manager",
+      "Documentation Officer",
+      "Client Support Coordinator"
     ]
   },
+
   "ESFP": {
     type: "ESFP",
     name: "The Entertainer",
-    description: "ESFPs are social, energetic, and thrive where interaction and presentation matter.",
+    description: "ESFPs excel in sales, service, and customer-facing commerce roles.",
     traits: [
-      "Sales Representative",
-      "Brand Ambassador",
-      "Hospitality Manager",
-      "Public Relations Coordinator",
-      "Retail Manager"
+      "Customer Support Specialist",
+      "Retail Sales Analyst",
+      "Billing & Service Executive",
+      "Hospitality Operations Executive",
+      "Sales Promoter (Corporate)"
     ]
   },
+
   "INTJ": {
     type: "INTJ",
     name: "The Architect",
-    description: "INTJs are analytical strategists who excel at long-term planning and systems optimization.",
+    description: "INTJs excel in analytical, finance-based, and operations-focused commercial roles.",
     traits: [
-      "Business Analyst",
-      "Strategic Planner",
-      "Management Consultant",
-      "Operations Architect",
-      "Data Strategy Lead"
+      "Financial Analyst",
+      "Investment Research Associate",
+      "Business Process Auditor",
+      "Risk & Compliance Analyst",
+      "Data-Driven Commerce Analyst"
     ]
   },
+
   "INTP": {
     type: "INTP",
     name: "The Thinker",
-    description: "INTPs are conceptual thinkers who excel at analysis, modeling, and innovation.",
+    description: "INTPs excel in analytical, research-oriented business environments.",
     traits: [
-      "Process Analyst",
-      "R&D Strategist",
-      "Systems Designer",
-      "Data Analyst",
-      "Business Process Engineer"
+      "Financial Data Analyst",
+      "Cost Analyst",
+      "Risk Analyst",
+      "Business Research Associate",
+      "Process Optimization Analyst"
     ]
   },
+
   "INFJ": {
     type: "INFJ",
     name: "The Advocate",
-    description: "INFJs excel in roles where purpose, people, and strategy align.",
+    description: "INFJs do well in ethical business, CSR, and structured commercial roles.",
     traits: [
-      "Organizational Development Specialist",
-      "HR Business Partner",
-      "Corporate Social Responsibility (CSR) Lead",
-      "Change Management Consultant",
-      "Employee Wellness Manager"
+      "Compliance & Ethics Associate",
+      "CSR Analyst",
+      "Internal Communications Executive",
+      "Policy Assistant",
+      "Employee Engagement Coordinator"
     ]
   },
+
   "INFP": {
     type: "INFP",
     name: "The Mediator",
-    description: "INFPs thrive in mission-driven, creative, and people-centric roles.",
+    description: "INFPs excel in communication, CSR, and supportive commercial functions.",
     traits: [
-      "Content Strategist",
-      "CSR Coordinator",
-      "Employee Relations Specialist",
-      "Creative Writer/Brand Voice Lead",
-      "Culture Specialist"
+      "Corporate Outreach Coordinator",
+      "Training & HR Assistant",
+      "Communications & Branding Associate",
+      "Documentation Specialist",
+      "Client Support Associate"
     ]
   },
+
   "ISTJ": {
     type: "ISTJ",
     name: "The Logistician",
-    description: "ISTJs excel in structured environments with clear rules and responsibilities.",
+    description: "ISTJs thrive in structured accounting, audit, and administrative commercial roles.",
     traits: [
-      "Accountant",
-      "Administrative Supervisor",
-      "Compliance Specialist",
-      "Inventory Manager",
-      "Data Administrator"
+      "Junior Accountant",
+      "Audit Trainee",
+      "Tax Assistant",
+      "Inventory & Accounts Coordinator",
+      "Compliance Documentation Assistant"
     ]
   },
+
   "ISTP": {
     type: "ISTP",
     name: "The Virtuoso",
-    description: "ISTPs thrive in hands-on, problem-solving, technical, and operational roles.",
+    description: "ISTPs excel in practical, operations-heavy commerce roles.",
     traits: [
-      "Operations Technician",
-      "Process Improvement Analyst",
-      "Field Operations Lead",
-      "Logistics Coordinator",
-      "Risk & Safety Manager"
+      "Logistics & Supply Chain Analyst",
+      "Operations Billing Specialist",
+      "Inventory Control Executive",
+      "Warehouse Data Coordinator",
+      "Process Monitoring Assistant"
     ]
   },
+
   "ISFJ": {
     type: "ISFJ",
     name: "The Protector",
-    description: "ISFJs excel in supportive, detail-oriented, and people-focused administrative roles.",
+    description: "ISFJs excel in supportive, detail-oriented office and finance roles.",
     traits: [
-      "Administrative Assistant",
-      "HR Support Specialist",
-      "Customer Support Lead",
-      "Compliance Assistant",
-      "Office Operations Coordinator"
+      "Accounts Assistant",
+      "Payroll Support Executive",
+      "Documentation Coordinator",
+      "Customer Care Executive",
+      "Admin & Compliance Assistant"
     ]
   },
+
   "ISFP": {
     type: "ISFP",
     name: "The Adventurer",
-    description: "ISFPs thrive in flexible, creative, and hands-on environments.",
+    description: "ISFPs thrive in flexible, service-oriented commercial roles.",
     traits: [
-      "Creative Designer",
-      "Brand Stylist",
-      "Customer Experience Specialist",
-      "Event & Experience Designer",
-      "Retail Experience Manager"
+      "Billing & Operations Executive",
+      "Client Support Executive",
+      "Merchandising Coordinator",
+      "Retail Experience Assistant",
+      "Service Desk Executive"
     ]
   }
-}
-
+};
