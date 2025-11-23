@@ -163,6 +163,7 @@ function ProfileForm() {
                         <SelectContent>
                           <SelectItem value="mba">M.B.A</SelectItem>
                           <SelectItem value="bba">B.B.A</SelectItem>
+                          <SelectItem value="others">others</SelectItem>
                         </SelectContent>
                       </Select>
 
