@@ -16,7 +16,6 @@ export const Route = createFileRoute("/quizz")({
     if (!profileId) {
       throw redirect({ to: "/" });
     }
-    // Fetch profile in loader to get name
     const profile = await getProfile({ data: { id: profileId } });
     if (!profile) {
       throw redirect({ to: "/" });
@@ -37,7 +36,6 @@ function RouteComponent() {
   const isFirstQuestion = currentQuestionIndex === 0;
   const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
 
-  // Initialize selected answer when question changes
   useEffect(() => {
     const existingAnswer = answers.find((a) => a.questionId === currentQuestion.id);
     setSelectedAnswer(existingAnswer?.answer ?? null);
@@ -111,7 +109,6 @@ function RouteComponent() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Mobile App Header */}
       <div className="sticky top-0 z-10 bg-card/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-md mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-2">
@@ -133,7 +130,6 @@ function RouteComponent() {
             </div>
           </div>
           
-          {/* Progress Bar */}
           <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
             <div
               className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
@@ -143,7 +139,6 @@ function RouteComponent() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-md mx-auto px-4 py-6 pb-24">
         <div className="bg-card rounded-3xl shadow-xl p-6 mb-6">
           <h2 className="text-xl font-bold text-card-foreground mb-6 leading-tight">
@@ -182,7 +177,6 @@ function RouteComponent() {
         </div>
       </div>
 
-      {/* Bottom Navigation Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-lg border-t border-border">
         <div className="max-w-md mx-auto px-4 py-4">
           <div className="flex gap-3">

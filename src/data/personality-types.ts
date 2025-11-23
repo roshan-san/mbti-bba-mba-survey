@@ -2,105 +2,201 @@ export interface PersonalityTypeInfo {
   type: string;
   name: string;
   description: string;
-  traits: string[];
+  traits: string[]; 
 }
 
 export const personalityTypes: { [key: string]: PersonalityTypeInfo } = {
   "ENTJ": {
     type: "ENTJ",
     name: "The Commander",
-    description: "ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and they enjoy developing long-term plans to accomplish their vision.",
-    traits: ["Strategic", "Confident", "Decisive", "Natural leader", "Goal-oriented"]
+    description: "ENTJs are strategic leaders, motivated to organize change. They excel at vision, management, and execution.",
+    traits: [
+      "Business Strategist",
+      "Operations Manager",
+      "Executive Leadership",
+      "Project Director",
+      "Business Development Manager"
+    ]
   },
   "ENTP": {
     type: "ENTP",
     name: "The Debater",
-    description: "ENTPs are smart and curious thinkers who cannot resist an intellectual challenge. They are bold and creative, deconstructing and rebuilding ideas with great mental agility.",
-    traits: ["Innovative", "Quick-witted", "Outspoken", "Resourceful", "Energetic"]
+    description: "ENTPs are innovative thinkers who enjoy ideation, problem-solving, and challenging norms.",
+    traits: [
+      "Product Innovation Lead",
+      "Business Consultant",
+      "Entrepreneur",
+      "Marketing Strategist",
+      "R&D Manager"
+    ]
   },
   "ENFJ": {
     type: "ENFJ",
     name: "The Protagonist",
-    description: "ENFJs are natural-born leaders, full of passion and charisma. They are able to inspire others with their conviction and are often found taking charge of a situation.",
-    traits: ["Charismatic", "Inspiring", "Natural-born leader", "Passionate", "Altruistic"]
+    description: "ENFJs are inspiring leaders who excel at team alignment, communication, and people-first leadership.",
+    traits: [
+      "HR Manager",
+      "Training & Development Lead",
+      "Customer Success Manager",
+      "Organizational Development Manager",
+      "Public Relations Manager"
+    ]
   },
   "ENFP": {
     type: "ENFP",
     name: "The Campaigner",
-    description: "ENFPs are people-centered creators with a focus on possibilities and a contagious enthusiasm for new ideas, people and activities.",
-    traits: ["Enthusiastic", "Creative", "Sociable", "Free-spirited", "Passionate"]
+    description: "ENFPs bring energy, creativity, and people-focused ideas to organizations.",
+    traits: [
+      "Creative Marketing Lead",
+      "Brand Manager",
+      "Community Manager",
+      "Recruitment Specialist",
+      "Culture & Engagement Manager"
+    ]
   },
   "ESTJ": {
     type: "ESTJ",
     name: "The Executive",
-    description: "ESTJs are hardworking traditionalists, eager to take charge in organizing projects and people. Orderly, rule-abiding, and conscientious, ESTJs like to get things done.",
-    traits: ["Organized", "Dedicated", "Honest", "Dependable", "Practical"]
+    description: "ESTJs are structured, dependable organizers who excel in operations and administration.",
+    traits: [
+      "Operations Manager",
+      "Administrative Manager",
+      "Compliance Officer",
+      "Supply Chain Manager",
+      "Project Administrator"
+    ]
   },
   "ESTP": {
     type: "ESTP",
     name: "The Entrepreneur",
-    description: "ESTPs are smart, energetic and very perceptive people, truly aware of their surroundings. They are flexible and adaptable, always ready to dive into the next experience.",
-    traits: ["Bold", "Practical", "Original", "Perceptive", "Direct"]
+    description: "ESTPs are action-oriented and thrive in fast-paced, dynamic environments.",
+    traits: [
+      "Sales Manager",
+      "Business Development Lead",
+      "Field Operations Manager",
+      "Negotiator",
+      "Crisis Management Lead"
+    ]
   },
   "ESFJ": {
     type: "ESFJ",
     name: "The Consul",
-    description: "ESFJs are extraverted helpers, ready to support their friends and loved ones and organize social gatherings. They are careful and methodical, and enjoy being in control.",
-    traits: ["Strong practical skills", "Loyal", "Sensitive", "Warm", "Good at connecting with others"]
+    description: "ESFJs organize people and processes, excelling in coordination, service, and administrative roles.",
+    traits: [
+      "Customer Relations Manager",
+      "HR Coordinator",
+      "Office Manager",
+      "Client Services Lead",
+      "Event Manager"
+    ]
   },
   "ESFP": {
     type: "ESFP",
     name: "The Entertainer",
-    description: "ESFPs are spontaneous, energetic people who love life and live it to the fullest. They are flexible and resourceful, and they love to explore new possibilities.",
-    traits: ["Bold", "Original", "Aesthetics & showmanship", "Practical", "Perceptive"]
+    description: "ESFPs are social, energetic, and thrive where interaction and presentation matter.",
+    traits: [
+      "Sales Representative",
+      "Brand Ambassador",
+      "Hospitality Manager",
+      "Public Relations Coordinator",
+      "Retail Manager"
+    ]
   },
   "INTJ": {
     type: "INTJ",
     name: "The Architect",
-    description: "INTJs are analytical problem-solvers, eager to improve systems and processes with their innovative ideas. They have a talent for seeing possibilities for improvement.",
-    traits: ["Independent", "Determined", "Insightful", "Original", "Confident"]
+    description: "INTJs are analytical strategists who excel at long-term planning and systems optimization.",
+    traits: [
+      "Business Analyst",
+      "Strategic Planner",
+      "Management Consultant",
+      "Operations Architect",
+      "Data Strategy Lead"
+    ]
   },
   "INTP": {
     type: "INTP",
     name: "The Thinker",
-    description: "INTPs are philosophical innovators, fascinated by logical analysis, systems, and design. They are preoccupied with theory, and search for the universal law behind everything they see.",
-    traits: ["Logical", "Original", "Creative", "Theoretical", "Independent"]
+    description: "INTPs are conceptual thinkers who excel at analysis, modeling, and innovation.",
+    traits: [
+      "Process Analyst",
+      "R&D Strategist",
+      "Systems Designer",
+      "Data Analyst",
+      "Business Process Engineer"
+    ]
   },
   "INFJ": {
     type: "INFJ",
     name: "The Advocate",
-    description: "INFJs are creative nurturers with a strong sense of personal integrity and a drive to help others realize their potential. Creative and dedicated, they have a talent for helping others with original solutions.",
-    traits: ["Creative", "Insightful", "Inspiring", "Convicted", "Determined"]
+    description: "INFJs excel in roles where purpose, people, and strategy align.",
+    traits: [
+      "Organizational Development Specialist",
+      "HR Business Partner",
+      "Corporate Social Responsibility (CSR) Lead",
+      "Change Management Consultant",
+      "Employee Wellness Manager"
+    ]
   },
   "INFP": {
     type: "INFP",
     name: "The Mediator",
-    description: "INFPs are poetic, kind and altruistic people, always eager to help a good cause. They are creative and flexible, and they enjoy exploring new possibilities.",
-    traits: ["Idealistic", "Loyal", "Adaptable", "Creative", "Passionate"]
+    description: "INFPs thrive in mission-driven, creative, and people-centric roles.",
+    traits: [
+      "Content Strategist",
+      "CSR Coordinator",
+      "Employee Relations Specialist",
+      "Creative Writer/Brand Voice Lead",
+      "Culture Specialist"
+    ]
   },
   "ISTJ": {
     type: "ISTJ",
     name: "The Logistician",
-    description: "ISTJs are practical and fact-minded, reliable, and responsible. They are thorough and painstaking, and they value tradition and loyalty.",
-    traits: ["Honest", "Practical", "Responsible", "Calm", "Loyal"]
+    description: "ISTJs excel in structured environments with clear rules and responsibilities.",
+    traits: [
+      "Accountant",
+      "Administrative Supervisor",
+      "Compliance Specialist",
+      "Inventory Manager",
+      "Data Administrator"
+    ]
   },
   "ISTP": {
     type: "ISTP",
     name: "The Virtuoso",
-    description: "ISTPs are bold and practical experimenters, masters of all kinds of tools. They are observant and flexible, and they enjoy understanding how things work.",
-    traits: ["Bold", "Practical", "Original", "Perceptive", "Spontaneous"]
+    description: "ISTPs thrive in hands-on, problem-solving, technical, and operational roles.",
+    traits: [
+      "Operations Technician",
+      "Process Improvement Analyst",
+      "Field Operations Lead",
+      "Logistics Coordinator",
+      "Risk & Safety Manager"
+    ]
   },
   "ISFJ": {
     type: "ISFJ",
     name: "The Protector",
-    description: "ISFJs are very dedicated and warm protectors, always ready to defend their loved ones. They are practical and committed to their sense of duty.",
-    traits: ["Supportive", "Reliable", "Patient", "Imaginative", "Observant"]
+    description: "ISFJs excel in supportive, detail-oriented, and people-focused administrative roles.",
+    traits: [
+      "Administrative Assistant",
+      "HR Support Specialist",
+      "Customer Support Lead",
+      "Compliance Assistant",
+      "Office Operations Coordinator"
+    ]
   },
   "ISFP": {
     type: "ISFP",
     name: "The Adventurer",
-    description: "ISFPs are flexible and charming artists, always ready to explore new possibilities. They are practical and spontaneous, and they enjoy living in the moment.",
-    traits: ["Bold", "Practical", "Aesthetic", "Flexible", "Charming"]
+    description: "ISFPs thrive in flexible, creative, and hands-on environments.",
+    traits: [
+      "Creative Designer",
+      "Brand Stylist",
+      "Customer Experience Specialist",
+      "Event & Experience Designer",
+      "Retail Experience Manager"
+    ]
   }
-};
+}
 

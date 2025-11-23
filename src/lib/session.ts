@@ -5,7 +5,6 @@ import { z } from "zod";
 const PROFILE_ID_KEY = "_profile-id";
 const PERSONALITY_TYPE_KEY = "_personality-type";
 
-// Profile ID functions
 export const getProfileIdServerFn = createServerFn().handler(
   async () => getCookie(PROFILE_ID_KEY) || null,
 );
@@ -24,7 +23,6 @@ export const clearProfileIdServerFn = createServerFn({ method: "POST" }).handler
   },
 );
 
-// Personality type functions
 export const getPersonalityTypeServerFn = createServerFn().handler(
   async () => getCookie(PERSONALITY_TYPE_KEY) || null,
 );
@@ -43,7 +41,6 @@ export const clearPersonalityTypeServerFn = createServerFn({ method: "POST" }).h
   },
 );
 
-// Clear all session data
 export const clearSessionServerFn = createServerFn({ method: "POST" }).handler(
   async () => {
     deleteCookie(PROFILE_ID_KEY);

@@ -5,6 +5,9 @@ import { personalityTypes } from '@/data/personality-types';
 import { Badge } from '@/components/ui/badge';
 import { getPersonalityTypeServerFn, getProfileIdServerFn, clearSessionServerFn } from '@/lib/session';
 import { getProfile } from '@/server/functions/profiles';
+import { useRef } from 'react';
+import { toJpeg } from "html-to-image";
+
 
 export const Route = createFileRoute('/result')({
   component: RouteComponent,
@@ -27,15 +30,27 @@ function RouteComponent() {
   const { personalityType, profile } = Route.useLoaderData();
   const typeInfo = personalityTypes[personalityType];
 
+  const downloadImage = () => {
+  if (!pageRef.current) return;
+
+  toJpeg(pageRef.current, { quality: 0.95 })
+    .then((dataUrl) => {
+      const link = document.createElement("a");
+      link.download = "personality-result.jpg";
+      link.href = dataUrl;
+      link.click();
+    })
+    .catch(console.error);
+}
   const handleRetakeQuiz = async () => {
     await clearSessionServerFn();
     navigate({ to: "/" });
   };
 
-  const handleStartNew = async () => {
-    await clearSessionServerFn();
-    navigate({ to: "/" });
-  };
+  // const handleStartNew = async () => {
+  //   await clearSessionServerFn();
+  //   navigate({ to: "/" });
+  // };
 
   if (!typeInfo) {
     return (
@@ -52,29 +67,27 @@ function RouteComponent() {
       </div>
     );
   }
+  const pageRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Mobile App Header */}
+    <div ref={pageRef} className="min-h-screen bg-background">
       <div className="sticky top-0 z-10 bg-card/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-md mx-auto px-4 py-4">
-          <h1 className="text-lg font-bold text-foreground">
+          <h1 className="text-xl font-bold text-foreground">
             Your Results
           </h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xl text-primary">
             {profile?.name ? `Congratulations, ${profile.name}!` : "Congratulations!"}
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-md mx-auto px-4 py-6 pb-24">
-        {/* Personality Type Card */}
         <div className="bg-card rounded-3xl shadow-xl p-6 mb-6 text-center">
           <div className="mb-4">
             <Badge 
-              variant="outline" 
-              className="text-3xl font-bold px-6 py-3 border-2 border-primary text-primary"
+              variant="default" 
+              className="text-3xl font-bold px-6 py-3 border-2 border-primary text-primary-foreground"
             >
               {personalityType}
             </Badge>
@@ -82,22 +95,21 @@ function RouteComponent() {
           <h2 className="text-2xl font-bold text-card-foreground mb-3">
             {typeInfo.name}
           </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <Badge  variant="secondary" className="text-base bg-green-200 text-primary-foreground leading-relaxed">
             {typeInfo.description}
-          </p>
+          </Badge>
         </div>
 
-        {/* Traits Card */}
         <div className="bg-card rounded-3xl shadow-xl p-6 mb-6">
           <h3 className="text-lg font-bold text-card-foreground mb-4">
-            Key Traits
+            Your Suitable Roles in Business are 
           </h3>
           <div className="flex flex-wrap gap-2">
             {typeInfo.traits.map((trait, index) => (
               <Badge 
                 key={index} 
-                variant="secondary" 
-                className="text-sm px-4 py-2"
+                variant="outline" 
+                className="text-sm px-2 py-2"
               >
                 {trait}
               </Badge>
@@ -105,15 +117,13 @@ function RouteComponent() {
           </div>
         </div>
 
-        {/* Thank You Message */}
-        <div className="bg-primary rounded-3xl shadow-xl p-6 mb-6 text-center">
+        <div className="bg-primary rounded-3xl shadow-xl p-6 text-center">
           <p className="text-primary-foreground font-semibold text-base">
             🎉 Thank you for completing the MBTI personality assessment!
           </p>
         </div>
       </div>
 
-      {/* Bottom Navigation Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-lg border-t border-border">
         <div className="max-w-md mx-auto px-4 py-4">
           <div className="flex gap-3">
@@ -125,10 +135,10 @@ function RouteComponent() {
               Retake Quiz
             </Button>
             <Button
-              onClick={handleStartNew}
+              onClick={downloadImage}
               className="flex-1 h-12 rounded-xl font-semibold"
             >
-              New Profile
+              Downlooad my Card
             </Button>
           </div>
         </div>
